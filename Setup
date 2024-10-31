@@ -1,0 +1,17 @@
+void setup() {
+    // Inisialisasi tampilan OLED
+    if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
+        Serial.println(F("SSD1306 allocation failed"));
+        for (;;); // Berhenti di sini jika tampilan gagal diinisialisasi
+    }
+    display.clearDisplay();
+
+    // Konfigurasi pin
+    pinMode(trigPin, OUTPUT);
+    pinMode(echoPin, INPUT);
+
+    // Pengaturan variabel
+    sujud = 0;
+    rakaat = 0;
+    sujudState = false;
+}
